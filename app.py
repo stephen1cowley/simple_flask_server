@@ -17,9 +17,10 @@ def get_data():
     }
     return jsonify(data)
 
+
 @app.route('/api/data', methods=['POST'])
 def post_data():
-    new_data = request.json
+    new_data = request.get_json()
     # Process and store
     return jsonify(new_data), 201
 
